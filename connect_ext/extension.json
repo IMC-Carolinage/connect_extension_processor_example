@@ -1,0 +1,88 @@
+{
+  "name": "connect_extension_processor_example",
+  "description": "Processor Example using a Mock API Endpoint",
+  "version": "1.0.0",
+  "readme_url": "https://example.com/README.md",
+  "changelog_url": "https://example.com/CHANGELOG.md",
+  "capabilities": {
+    "asset_purchase_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed",
+      "scheduled",
+      "revoking",
+      "revoked"
+    ],
+    "asset_change_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed",
+      "scheduled",
+      "revoking",
+      "revoked"
+    ],
+    "asset_suspend_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed",
+      "scheduled",
+      "revoking",
+      "revoked"
+    ],
+    "asset_resume_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed",
+      "scheduled",
+      "revoking",
+      "revoked"
+    ],
+    "asset_cancel_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed",
+      "scheduled",
+      "revoking",
+      "revoked"
+    ],
+    "asset_adjustment_request_processing": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed"
+    ],
+    "asset_purchase_request_validation": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed"
+    ],
+    "asset_change_request_validation": [
+      "draft",
+      "tiers_setup",
+      "pending",
+      "inquiring",
+      "approved",
+      "failed"
+    ]
+  }
+}
