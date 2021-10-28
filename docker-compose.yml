@@ -3,31 +3,10 @@ version: '3'
 services:
   connect_extension_processor_example_dev:
     container_name: connect_extension_processor_example_dev
-    image: cloudblueconnect/connect-extension-runner:23.7
+    image: cloudblueconnect/connect-extension-runner:latest
     command: cextrun -d
     volumes: 
       - .:/extension
     env_file:
       - .connect_extension_processor_example_dev.env
 
-  connect_extension_processor_example_bash:
-    container_name: connect_extension_processor_example_bash
-    image: cloudblueconnect/connect-extension-runner:23.7
-    working_dir: /extension
-    command: /bin/bash
-    stdin_open: true
-    tty: true
-    volumes:
-      - .:/extension
-    env_file:
-      - .connect_extension_processor_example_dev.env
-
-  connect_extension_processor_example_test:
-    container_name: connect_extension_processor_example_test
-    image: cloudblueconnect/connect-extension-runner:23.7
-    working_dir: /extension
-    command: /bin/bash -c "poetry install && pytest --verbose --cov=connect_ext --cov-report=html --cov-report=term-missing:skip-covered"
-    volumes:
-      - .:/extension
-    env_file:
-      - .connect_extension_processor_example_dev.env

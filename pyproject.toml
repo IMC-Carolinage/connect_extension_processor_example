@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "connect-extension-processor-example"
+name = "ConnectExtensionProcessorExampleExtension"
 version = "1.0.0"
 description = "Processor Example using a Mock API Endpoint"
 authors = ["Carolina Giménez Escalante"]
@@ -10,7 +10,7 @@ packages = [
 readme = "./README.md"
 
 [tool.poetry.plugins."connect.eaas.ext"]
-"extension" = "connect_ext.extension:Connect_extension_processor_exampleExtension"
+"extension" = "connect_ext.extension:ConnectExtensionProcessorExampleExtension"
 
 [tool.poetry.dependencies]
 python = "^3.8"

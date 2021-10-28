@@ -1,9 +1,9 @@
 {
-  "name": "connect_extension_processor_example",
-  "description": "Processor Example using a Mock API Endpoint",
+  "name": "ConnectExtensionProcessorExampleExtension",
+  "description": "Extension as a Service Processor Example using a Mock API Endpoint",
   "version": "1.0.0",
-  "readme_url": "https://example.com/README.md",
-  "changelog_url": "https://example.com/CHANGELOG.md",
+  "readme_url": "https://github.com/IMC-Carolinage/connect_extension_processor_example/blob/master/README.md",
+  "changelog_url": "https://github.com/IMC-Carolinage/connect_extension_processor_example/blob/master/CHANGELOG.md",
   "capabilities": {
     "asset_purchase_request_processing": [
       "draft",
@@ -59,30 +59,6 @@
       "scheduled",
       "revoking",
       "revoked"
-    ],
-    "asset_adjustment_request_processing": [
-      "draft",
-      "tiers_setup",
-      "pending",
-      "inquiring",
-      "approved",
-      "failed"
-    ],
-    "asset_purchase_request_validation": [
-      "draft",
-      "tiers_setup",
-      "pending",
-      "inquiring",
-      "approved",
-      "failed"
-    ],
-    "asset_change_request_validation": [
-      "draft",
-      "tiers_setup",
-      "pending",
-      "inquiring",
-      "approved",
-      "failed"
     ]
   }
 }
