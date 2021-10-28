@@ -1,5 +1,7 @@
 from connect_ext.utils.utils import Utils
+
 from cnct import ConnectClient
+
 from typing import Dict
 
 

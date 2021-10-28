@@ -1,6 +1,9 @@
 from connect_ext.utils.utils import Utils
+
 from cnct import ConnectClient
+
 from typing import Dict
+
 from connect.eaas.extension import ProcessingResponse
 
 

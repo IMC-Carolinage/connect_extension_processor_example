@@ -1,5 +1,7 @@
 from typing import Any, Dict
+
 from cnct import ConnectClient
+
 from .message import Message
 from connect_ext.app.api_client.isv_client import APIClient
 from connect.client.models.resourceset import ResourceSet

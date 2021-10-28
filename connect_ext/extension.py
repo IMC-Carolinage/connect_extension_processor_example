@@ -5,15 +5,14 @@
 #
 from connect.eaas.extension import (
     Extension,
-    ProcessingResponse,
-    ValidationResponse,
+    ProcessingResponse
 )
-from connect_ext.app.purchase import (
-    Purchase,
-    Change,
-    Cancel,
-    Resume,
-    Suspend)
+
+from connect_ext.app.cancel import Cancel
+from connect_ext.app.change import Change
+from connect_ext.app.purchase import Purchase
+from connect_ext.app.resume import Resume
+from connect_ext.app.suspend import Suspend
 
 
 class ConnectExtensionProcessorExampleExtension(Extension):
@@ -61,4 +60,3 @@ class ConnectExtensionProcessorExampleExtension(Extension):
             ConnectExtensionProcessorExampleExtension.API_ENDPOINT = self.config['API_ENDPOINT']
             return Cancel().process_request(request, self.client)
         return ProcessingResponse.done()
-
