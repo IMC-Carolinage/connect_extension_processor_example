@@ -3,8 +3,11 @@ from typing import Any, Dict
 from cnct import ConnectClient
 
 from .message import Message
+
 from connect_ext.app.api_client.isv_client import APIClient
+
 from connect.client.models.resourceset import ResourceSet
+
 from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
 
@@ -49,8 +52,8 @@ class Utils:
         params = Utils.get_value(request, 'asset', 'params')
         for param in params:
             param_phase = Utils.get_basic_value(param, 'phase')
-            if param_phase == param_phase_value and \
-                    Utils.get_basic_value(param, 'name') == param_name:
+            if (param_phase == param_phase_value
+                    and Utils.get_basic_value(param, 'name') == param_name):
                 return Utils.get_basic_value(param, 'value')
 
     @staticmethod
