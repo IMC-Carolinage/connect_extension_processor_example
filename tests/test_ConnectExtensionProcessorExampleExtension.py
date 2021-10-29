@@ -3,7 +3,7 @@
 # Copyright (c) 2021, Carolina Giménez Escalante
 # All rights reserved.
 #
-from unittest.mock import MagicMock
+from unittest.mock import patch, MagicMock
 
 from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
@@ -27,6 +27,8 @@ def test_process_asset_purchase_request(
     assert result.status == 'success'
 
 
+@patch('connect_ext.app.api_client.isv_client.APIClient.change_subscription',
+       MagicMock(return_value=''))
 def test_process_asset_change_request(
         sync_client_factory,
         response_factory,
@@ -44,6 +46,8 @@ def test_process_asset_change_request(
     assert result.status == 'success'
 
 
+@patch('connect_ext.app.api_client.isv_client.APIClient.suspend_subscription',
+       MagicMock(return_value=''))
 def test_process_asset_suspend_request(
         sync_client_factory,
         response_factory,
@@ -61,6 +65,8 @@ def test_process_asset_suspend_request(
     assert result.status == 'success'
 
 
+@patch('connect_ext.app.api_client.isv_client.APIClient.resume_subscription',
+       MagicMock(return_value=''))
 def test_process_asset_resume_request(
         sync_client_factory,
         response_factory,
@@ -78,6 +84,8 @@ def test_process_asset_resume_request(
     assert result.status == 'success'
 
 
+@patch('connect_ext.app.api_client.isv_client.APIClient.cancel_subscription',
+       MagicMock(return_value=''))
 def test_process_asset_cancel_request(
         sync_client_factory,
         response_factory,
