@@ -3,7 +3,7 @@
 # Copyright (c) 2021, Carolina Giménez Escalante
 # All rights reserved.
 #
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
