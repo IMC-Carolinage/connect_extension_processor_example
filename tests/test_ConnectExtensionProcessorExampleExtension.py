@@ -22,9 +22,7 @@ def test_process_asset_purchase_request(
     responses = [
         response_factory(count=100),
         response_factory(value=[{'id': 'item-1', 'status': 'pending'}]),
-        response_factory(
-                value=[{'id': 'item-1'}]
-            )
+        response_factory(value=[{'id': 'item-1'}])
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
