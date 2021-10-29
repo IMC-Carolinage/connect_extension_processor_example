@@ -3,14 +3,17 @@
 # Copyright (c) 2021, Carolina Giménez Escalante
 # All rights reserved.
 #
+from unittest.mock import MagicMock
 
 from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
 
+@patch('connect_ext.app.api_client.isv_client.APIClient.create_subscription',
+       MagicMock(return_value='{ tenantId: 3 }'))
 def test_process_asset_purchase_request(
-    sync_client_factory,
-    response_factory,
-    logger,
+        sync_client_factory,
+        response_factory,
+        logger,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'params': {}}
@@ -25,9 +28,9 @@ def test_process_asset_purchase_request(
 
 
 def test_process_asset_change_request(
-    sync_client_factory,
-    response_factory,
-    logger,
+        sync_client_factory,
+        response_factory,
+        logger,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
@@ -42,9 +45,9 @@ def test_process_asset_change_request(
 
 
 def test_process_asset_suspend_request(
-    sync_client_factory,
-    response_factory,
-    logger,
+        sync_client_factory,
+        response_factory,
+        logger,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': 'OneTime'}]}}
@@ -59,9 +62,9 @@ def test_process_asset_suspend_request(
 
 
 def test_process_asset_resume_request(
-    sync_client_factory,
-    response_factory,
-    logger,
+        sync_client_factory,
+        response_factory,
+        logger,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending'}
@@ -76,9 +79,9 @@ def test_process_asset_resume_request(
 
 
 def test_process_asset_cancel_request(
-    sync_client_factory,
-    response_factory,
-    logger,
+        sync_client_factory,
+        response_factory,
+        logger,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
