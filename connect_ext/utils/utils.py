@@ -8,11 +8,11 @@ from connect_ext.app.api_client.isv_client import APIClient
 
 from connect.client.models.resourceset import ResourceSet
 
-from connect_ext.extension import ConnectExtensionProcessorExampleExtension
-
 
 class Utils:
     """ Class for all static processor methods. """
+    ACTIVATION_TEMPLATE_NAME = 'Default Activation Template'
+    API_ENDPOINT = ''
 
     @staticmethod
     def get_item_by_id(items, item_id):
@@ -64,8 +64,7 @@ class Utils:
         product = Utils.get_value(request, 'asset', 'product')
         product_id = Utils.get_basic_value(product, 'id')
         # Get the activation template id.
-        template_id = Utils._get_template_by_product(product_id,
-                                                     ConnectExtensionProcessorExampleExtension.ACTIVATION_TEMPLATE_NAME,
+        template_id = Utils._get_template_by_product(product_id, Utils.ACTIVATION_TEMPLATE_NAME,
                                                      'asset', client)
         # Prepare the payload.
         payload = {"template_id": template_id}
@@ -80,8 +79,7 @@ class Utils:
         # Get the tier config product_id
         product = Utils.get_value(request, 'configuration', 'product')
         product_id = Utils.get_basic_value(product, 'id')
-        template_id = Utils._get_template_by_product(product_id,
-                                                     ConnectExtensionProcessorExampleExtension.ACTIVATION_TEMPLATE_NAME,
+        template_id = Utils._get_template_by_product(product_id, Utils.ACTIVATION_TEMPLATE_NAME,
                                                      'tier1', client)
         payload = {
             "template": {
@@ -137,7 +135,7 @@ class Utils:
 
     @staticmethod
     def get_api_client():
-        return APIClient(ConnectExtensionProcessorExampleExtension.API_ENDPOINT)
+        return APIClient(Utils.API_ENDPOINT)
 
     @staticmethod
     def save_error(client, request_id, error_message):

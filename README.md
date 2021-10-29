@@ -30,6 +30,10 @@ The parameter name is used in the processor to call the Connect API and complete
 value, before approving a purchase request, or retrieve the value to validate the change
 requests.
 
+## DevOps Service Configuration
+The service using this  Extension should have two environment variables:
+* API_ENDPOINT:https://private-anon-c209c83563-vendorexample.apiary-mock.com
+* ACTIVATION_TEMPLATE_NAME: Default Activation Template
 
 ## License
 
