@@ -10,6 +10,8 @@ from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.create_subscription',
        MagicMock(return_value={'tenantId': 3}))
+@patch('connect_ext.app.api_client.isv_client.APIClient.change_subscription',
+       MagicMock(return_value=''))
 @patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_purchase_request(
