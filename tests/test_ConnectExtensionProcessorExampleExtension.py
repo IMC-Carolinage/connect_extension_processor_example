@@ -10,7 +10,7 @@ from connect_ext.extension import ConnectExtensionProcessorExampleExtension
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.create_subscription',
        MagicMock(return_value={'tenantId': 3}))
-@patch('connect_ext.utils.Utils._get_template_by_product',
+@patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_purchase_request(
         sync_client_factory,
@@ -31,7 +31,7 @@ def test_process_asset_purchase_request(
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.change_subscription',
        MagicMock(return_value=''))
-@patch('connect_ext.utils.Utils._get_template_by_product',
+@patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_change_request(
         sync_client_factory,
@@ -52,7 +52,7 @@ def test_process_asset_change_request(
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.suspend_subscription',
        MagicMock(return_value=''))
-@patch('connect_ext.utils.Utils._get_template_by_product',
+@patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_suspend_request(
         sync_client_factory,
@@ -73,7 +73,7 @@ def test_process_asset_suspend_request(
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.resume_subscription',
        MagicMock(return_value=''))
-@patch('connect_ext.utils.Utils._get_template_by_product',
+@patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_resume_request(
         sync_client_factory,
@@ -94,7 +94,7 @@ def test_process_asset_resume_request(
 
 @patch('connect_ext.app.api_client.isv_client.APIClient.cancel_subscription',
        MagicMock(return_value=''))
-@patch('connect_ext.utils.Utils._get_template_by_product',
+@patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
 def test_process_asset_cancel_request(
         sync_client_factory,
