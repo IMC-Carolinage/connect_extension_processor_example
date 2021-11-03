@@ -19,7 +19,7 @@ def test_process_asset_purchase_request(
         response_factory,
         logger,
         ff_template,
-        ff_request
+        ff_request,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'params': {}, 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
@@ -42,12 +42,14 @@ def test_process_asset_change_request(
         sync_client_factory,
         response_factory,
         logger,
+        ff_template,
+        ff_request,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
     responses = [
-        response_factory(count=100),
-        response_factory(value=[{'id': 'item-1', 'value': 'value1'}]),
+        response_factory(value=ff_template, status=200),
+        response_factory(value=ff_request, status=200),
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
@@ -63,12 +65,14 @@ def test_process_asset_suspend_request(
         sync_client_factory,
         response_factory,
         logger,
+        ff_template,
+        ff_request,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': 'OneTime'}]}}
     responses = [
-        response_factory(count=100),
-        response_factory(value=[{'id': 'item-1', 'value': 'value1'}]),
+        response_factory(value=ff_template, status=200),
+        response_factory(value=ff_request, status=200),
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
@@ -84,12 +88,14 @@ def test_process_asset_resume_request(
         sync_client_factory,
         response_factory,
         logger,
+        ff_template,
+        ff_request,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending'}
     responses = [
-        response_factory(count=100),
-        response_factory(value=[{'id': 'item-1', 'value': 'value1'}]),
+        response_factory(value=ff_template, status=200),
+        response_factory(value=ff_request, status=200),
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
@@ -105,12 +111,14 @@ def test_process_asset_cancel_request(
         sync_client_factory,
         response_factory,
         logger,
+        ff_template,
+        ff_request,
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
     responses = [
-        response_factory(count=100),
-        response_factory(value=[{'id': 'item-1', 'value': 'value1'}]),
+        response_factory(value=ff_template, status=200),
+        response_factory(value=ff_request, status=200),
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
