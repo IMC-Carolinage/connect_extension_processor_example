@@ -2,9 +2,7 @@ from collections import namedtuple
 from collections.abc import Iterable
 from types import MethodType
 from urllib.parse import parse_qs
-
 import os
-
 import json
 
 import pytest
