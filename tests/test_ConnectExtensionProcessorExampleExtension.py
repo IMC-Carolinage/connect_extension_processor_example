@@ -61,7 +61,7 @@ def test_process_asset_change_request(
        MagicMock(return_value=''))
 @patch('connect_ext.utils.utils.Utils._get_template_by_product',
        MagicMock(return_value='TA-###-###'))
-def test_process_asset_change_request(
+def test_process_asset_wrong_change_request(
         sync_client_factory,
         response_factory,
         logger,

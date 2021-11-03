@@ -32,8 +32,8 @@ requests.
 
 ## DevOps Service Configuration
 The service using this  Extension should have two environment variables:
-* API_ENDPOINT:https://private-anon-9e7487c9df-vendorexample.apiary-mock.com
-* ACTIVATION_TEMPLATE_NAME: Default Activation Template
+* API_ENDPOINT: Enter the endpoint URL from https://vendorexample.docs.apiary.io/#. Like "https://private-anon-9e7487c9df-vendorexample.apiary-mock.com"
+* ACTIVATION_TEMPLATE_NAME: "Default Activation Template"
 
 ## License
 
