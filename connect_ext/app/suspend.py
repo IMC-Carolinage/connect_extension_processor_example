@@ -4,6 +4,8 @@ from cnct import ConnectClient
 
 from typing import Dict
 
+from connect.eaas.extension import ProcessingResponse
+
 
 class Suspend:
     """ Type SUSPEND means, it is a suspend request of an existing active subscription in Connect """
@@ -19,4 +21,5 @@ class Suspend:
         suspend_payload = {}
         api_client.suspend_subscription(suspend_payload, external_subscription_id)
 
-        return Utils.approve_fulfillment_request(request, client)
+        Utils.approve_fulfillment_request(request, client)
+        return ProcessingResponse.done()

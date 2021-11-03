@@ -4,6 +4,8 @@ from cnct import ConnectClient
 
 from typing import Dict
 
+from connect.eaas.extension import ProcessingResponse
+
 
 class Change:
     """ Type CHANGE means, it is a change request of an existing active subscription in Connect
@@ -29,8 +31,10 @@ class Change:
             }
             api_client.change_subscription(change_payload, subscription_id)
 
-            return Utils.approve_fulfillment_request(request, client)
+            Utils.approve_fulfillment_request(request, client)
         else:
             request_id = Utils.get_basic_value(request, 'id')
             reason = 'Change not allowed'
-            return Utils.reject_fulfillment_request(request_id, reason, client)
+            Utils.reject_fulfillment_request(request_id, reason, client)
+
+        return ProcessingResponse.done()

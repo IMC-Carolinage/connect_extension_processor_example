@@ -4,6 +4,8 @@ from cnct import ConnectClient
 
 from typing import Dict
 
+from connect.eaas.extension import ProcessingResponse
+
 
 class Resume:
     """ Type RESUME means, it is a resume request of an existing suspended subscription in Connect """
@@ -19,4 +21,5 @@ class Resume:
         resume_payload = {}
         api_client.resume_subscription(resume_payload, external_subscription_id)
 
-        return Utils.approve_fulfillment_request(request, client)
+        Utils.approve_fulfillment_request(request, client)
+        return ProcessingResponse.done()

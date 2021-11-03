@@ -4,6 +4,8 @@ from cnct import ConnectClient
 
 from typing import Dict
 
+from connect.eaas.extension import ProcessingResponse
+
 
 class Cancel:
     """ Type CANCEL means, it is a cancel request of an existing subscription in Connect """
@@ -20,4 +22,6 @@ class Cancel:
         cancel_payload = {}
         api_client.cancel_subscription(cancel_payload, external_subscription_id)
 
-        return Utils.approve_fulfillment_request(request, client)
+        Utils.approve_fulfillment_request(request, client)
+
+        return ProcessingResponse.done()
