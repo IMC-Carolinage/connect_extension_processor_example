@@ -4,15 +4,13 @@ from cnct import ConnectClient
 
 from typing import Dict
 
-from connect.eaas.extension import ProcessingResponse
-
 
 class Cancel:
     """ Type CANCEL means, it is a cancel request of an existing subscription in Connect """
 
     @staticmethod
     def process_request(request, client):
-        # type: (Dict, ConnectClient) -> Dict
+        # type: (Dict, ConnectClient) -> None
         """ This method approves or rejects the Fulfillment Requests in Pending status
         for cancel subscription action. """
 
@@ -23,5 +21,3 @@ class Cancel:
         api_client.cancel_subscription(cancel_payload, external_subscription_id)
 
         Utils.approve_fulfillment_request(request, client)
-
-        return ProcessingResponse.done()

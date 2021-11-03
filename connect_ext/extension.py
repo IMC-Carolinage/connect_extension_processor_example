@@ -23,7 +23,7 @@ class ConnectExtensionProcessorExampleExtension(Extension):
         if request['status'] == 'pending':
             Utils.ACTIVATION_TEMPLATE_NAME = self.config['ACTIVATION_TEMPLATE_NAME']
             Utils.API_ENDPOINT = self.config['API_ENDPOINT']
-            return Purchase().process_request(request, self.client)
+            Purchase().process_request(request, self.client)
         return ProcessingResponse.done()
 
     def process_asset_change_request(self, request):
@@ -31,7 +31,7 @@ class ConnectExtensionProcessorExampleExtension(Extension):
         if request['status'] == 'pending':
             Utils.ACTIVATION_TEMPLATE_NAME = self.config['ACTIVATION_TEMPLATE_NAME']
             Utils.API_ENDPOINT = self.config['API_ENDPOINT']
-            return Change().process_request(request, self.client)
+            Change().process_request(request, self.client)
         return ProcessingResponse.done()
 
     def process_asset_suspend_request(self, request):
@@ -39,7 +39,7 @@ class ConnectExtensionProcessorExampleExtension(Extension):
         if request['status'] == 'pending':
             Utils.ACTIVATION_TEMPLATE_NAME = self.config['ACTIVATION_TEMPLATE_NAME']
             Utils.API_ENDPOINT = self.config['API_ENDPOINT']
-            return Suspend().process_request(request, self.client)
+            Suspend().process_request(request, self.client)
         return ProcessingResponse.done()
 
     def process_asset_resume_request(self, request):
@@ -47,7 +47,7 @@ class ConnectExtensionProcessorExampleExtension(Extension):
         if request['status'] == 'pending':
             Utils.ACTIVATION_TEMPLATE_NAME = self.config['ACTIVATION_TEMPLATE_NAME']
             Utils.API_ENDPOINT = self.config['API_ENDPOINT']
-            return Resume().process_request(request, self.client)
+            Resume().process_request(request, self.client)
         return ProcessingResponse.done()
 
     def process_asset_cancel_request(self, request):
@@ -55,5 +55,5 @@ class ConnectExtensionProcessorExampleExtension(Extension):
         if request['status'] == 'pending':
             Utils.ACTIVATION_TEMPLATE_NAME = self.config['ACTIVATION_TEMPLATE_NAME']
             Utils.API_ENDPOINT = self.config['API_ENDPOINT']
-            return Cancel().process_request(request, self.client)
+            Cancel().process_request(request, self.client)
         return ProcessingResponse.done()

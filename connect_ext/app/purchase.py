@@ -4,15 +4,13 @@ from cnct import ConnectClient
 
 from typing import Dict
 
-from connect.eaas.extension import ProcessingResponse
-
 
 class Purchase:
     """ Type PURCHASE means, it is a new subscription in Connect """
 
     @staticmethod
     def process_request(request, client):
-        # type: (Dict, ConnectClient) -> Dict
+        # type: (Dict, ConnectClient) -> None
         """ This method processes the Fulfillment Requests in Pending status for purchase subscription action """
 
         api_client = Utils.get_api_client()
@@ -24,7 +22,6 @@ class Purchase:
         Purchase._save_fulfillment_parameters(request, client, subscription_info)
 
         Utils.approve_fulfillment_request(request, client)
-        return ProcessingResponse.done()
 
     @staticmethod
     def _save_fulfillment_parameters(request, client, subscription_info):
