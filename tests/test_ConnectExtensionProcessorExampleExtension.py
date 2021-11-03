@@ -25,7 +25,7 @@ def test_process_asset_purchase_request(
     request = {'id': 1, 'status': 'pending', 'params': {}, 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
     responses = [
         response_factory(value=ff_request, status=200),
-        response_factory(value=ff_template),
+        response_factory(value=ff_template, status=200),
         response_factory(value=ff_request, status=200),
     ]
     client = sync_client_factory(responses)
