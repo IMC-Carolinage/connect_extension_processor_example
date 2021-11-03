@@ -39,7 +39,7 @@ class Purchase:
                         "id": "subscription_id",
                         "value": subscription_id,
                         "value_error": "",
-                        "structured_value": ""
+                        "structured_value": {}
                     }
                 ]
             }
