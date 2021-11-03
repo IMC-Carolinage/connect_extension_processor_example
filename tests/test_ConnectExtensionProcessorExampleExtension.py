@@ -18,13 +18,16 @@ def test_process_asset_purchase_request(
         sync_client_factory,
         response_factory,
         logger,
+        ff_template,
+        ff_request
 ):
     config = {'ACTIVATION_TEMPLATE_NAME': '', 'API_ENDPOINT': ''}
     request = {'id': 1, 'status': 'pending', 'params': {}, 'asset': {'items': [{'quantity': 23, 'period': ''}]}}
     responses = [
         response_factory(count=100),
-        response_factory(value=[{'id': 'item-1', 'status': 'pending'}]),
-        response_factory(value=[{'id': 'item-1'}])
+        response_factory(value=ff_request),
+        response_factory(value=ff_template),
+        response_factory(value=ff_request),
     ]
     client = sync_client_factory(responses)
     ext = ConnectExtensionProcessorExampleExtension(client, logger, config)
